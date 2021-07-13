@@ -1,12 +1,14 @@
+{% set version = "0.17.0" %}
+
 package:
   name: smurff
-  version: {{ environ.get("GIT_DESCRIBE_TAG", "0.99.9").lstrip("v") }}
+  version: {{ version }}
 
 source:
-  path: ../..
+  url: https://github.com/ExaScience/smurff/releases/download/{{ version }}/smurff-{{ version }}.tar.gz
 
 build:
-    number: {{ GIT_DESCRIBE_NUMBER }}
+    number: 1
     ignore_run_exports:
       - llvm-openmp
 
