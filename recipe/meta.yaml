@@ -18,10 +18,9 @@ requirements:
     - cmake
     - {{ compiler('cxx') }}
     - {{ compiler('c') }}
-    - llvm-openmp             # [osx]
+    - llvm-openmp  # [osx]
+    - libgomp      # [linux]
   host:
-    - llvm-openmp             # [osx]
-    - intel-openmp
     - mkl-devel
     - eigen
     - libboost
@@ -34,7 +33,6 @@ requirements:
     - numpy
   run:
     - python {{ python }}
-    - intel-openmp  # [not win]
     - mkl
     - libboost  # [not win]
     - numpy
