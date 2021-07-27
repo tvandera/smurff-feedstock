@@ -5,7 +5,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/ExaScience/smurff/releases/download/{{ version }}/smurff-{{ version }}.tar.gz
+  git_url: https://github.com/ExaScience/smurff
+  git_tag: v{{ version }}
 
 build:
     number: 1
