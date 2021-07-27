@@ -22,7 +22,7 @@ requirements:
     - llvm-openmp             # [osx]
     - intel-openmp
     - mkl-devel
-    - eigen3
+    - eigen
     - libboost
     - pybind11
     - highfive >=2.2
