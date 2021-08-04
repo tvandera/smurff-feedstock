@@ -23,11 +23,10 @@ requirements:
     - llvm-openmp  # [osx]
     - libgomp      # [linux]
   host:
-    - libblas      # [not win]
-    - libcblas     # [not win]
-    - liblapack    # [not win]
-    - liblapacke   # [not win]
-    - mkl-devel    # [win]
+    - libblas
+    - libcblas
+    - liblapack
+    - liblapacke
     - eigen
     - boost-cpp
     - pybind11
@@ -38,11 +37,10 @@ requirements:
     - setuptools_scm
     - numpy
   run:
-    - libblas      # [not win]
-    - libcblas     # [not win]
-    - liblapack    # [not win]
-    - liblapacke   # [not win]
-    - mkl          # [win]
+    - libblas
+    - libcblas
+    - liblapack
+    - liblapacke
     - python {{ python }}
     - boost-cpp
     - numpy
