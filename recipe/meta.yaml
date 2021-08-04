@@ -7,6 +7,8 @@ package:
 source:
   url: https://github.com/ExaScience/smurff/archive/refs/tags/v{{ version }}.tar.gz
   sha256: 998bb056b76c87feba4af2f1692236ffa420cc547f838a93262c8b846b8dea5d 
+  patches:
+    - 0001-WIP-dynamic-boost-on-Windows.patch
 
 build:
     number: 0
@@ -21,9 +23,13 @@ requirements:
     - llvm-openmp  # [osx]
     - libgomp      # [linux]
   host:
-    - mkl-devel
+    - libblas      # [not win]
+    - libcblas     # [not win]
+    - liblapack    # [not win]
+    - liblapacke   # [not win]
+    - mkl-devel    # [win]
     - eigen
-    - libboost
+    - boost-cpp
     - pybind11
     - highfive >=2.2
     - h5py
@@ -32,11 +38,13 @@ requirements:
     - setuptools_scm
     - numpy
   run:
+    - libblas      # [not win]
+    - libcblas     # [not win]
+    - liblapack    # [not win]
+    - liblapacke   # [not win]
+    - mkl          # [win]
     - python {{ python }}
-    - mkl
-    - llvm-openmp  # [osx]
-    - libgomp      # [linux]
-    - libboost     # [not win]
+    - boost-cpp
     - numpy
     - scipy
     - pandas
